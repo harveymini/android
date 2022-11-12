@@ -1,0 +1,652 @@
+
+<!DOCTYPE HTML>
+<html lang="en" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Android Debug Bridge (ADB) · Android</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Harvey.X">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-insert-logo/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-ace/ace.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-flexible-alerts/style.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="systrace.html" />
+    
+    
+    <link rel="prev" href="command_line_tools.html" />
+    
+
+    <script src="../gitbook/gitbook-plugin-graph/d3.min.js"></script>
+    <script src="../gitbook/gitbook-plugin-graph/function-plot.js"></script>    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">PART Ⅰ Introduction</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅱ AOSP</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="how_to_download_aosp.html">
+            
+                <a href="how_to_download_aosp.html">
+            
+                    
+                    How to download AOSP?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="how_to_unlock_bootloader.html">
+            
+                <a href="how_to_unlock_bootloader.html">
+            
+                    
+                    How to unlock Bootloader?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="how_to_enter_engineering_mode.html">
+            
+                <a href="how_to_enter_engineering_mode.html">
+            
+                    
+                    How to enter engineering mode?
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="command_line_tools.html">
+            
+                <a href="command_line_tools.html">
+            
+                    
+                    Command line tools
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="adb.html">
+            
+                <a href="adb.html">
+            
+                    
+                    Android Debug Bridge (ADB)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="systrace.html">
+            
+                <a href="systrace.html">
+            
+                    
+                    Systrace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="aidl.html">
+            
+                <a href="aidl.html">
+            
+                    
+                    Android Interface Definition Language (AIDL)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">PART Ⅲ Application Components</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="activities.html">
+            
+                <a href="activities.html">
+            
+                    
+                    Activities
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="services.html">
+            
+                <a href="services.html">
+            
+                    
+                    Services
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="broadcast_receivers.html">
+            
+                <a href="broadcast_receivers.html">
+            
+                    
+                    Broadcast Receivers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="content_providers.html">
+            
+                <a href="content_providers.html">
+            
+                    
+                    Content Providers
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Android Debug Bridge (ADB)</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#android-debug-bridge-adb"><b></b>Android Debug Bridge (adb)</a></li><ul><li><span class="title-icon "></span><a href="#system-properties"><b></b>System Properties</a></li><li><span class="title-icon "></span><a href="#cat-something"><b></b>Cat something</a></li><li><span class="title-icon "></span><a href="#display"><b></b>Display</a></li><li><span class="title-icon "></span><a href="#cpu"><b></b>CPU</a></li><li><span class="title-icon "></span><a href="#ddr"><b></b>DDR</a></li><li><span class="title-icon "></span><a href="#gpu"><b></b>GPU</a></li><li><span class="title-icon "></span><a href="#skip-wizard"><b></b>Skip wizard</a></li><li><span class="title-icon "></span><a href="#find-a-apk-file"><b></b>Find a APK file</a></li><li><span class="title-icon "></span><a href="#compile-way"><b></b>Compile Way</a></li></ul></ul></div><a href="#android-debug-bridge-adb" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="android-debug-bridge-adb"><a name="android-debug-bridge-adb" class="anchor-navigation-ex-anchor" href="#android-debug-bridge-adb"><i class="fa fa-link" aria-hidden="true"></i></a>Android Debug Bridge (adb)</h1>
+<h2 id="system-properties"><a name="system-properties" class="anchor-navigation-ex-anchor" href="#system-properties"><i class="fa fa-link" aria-hidden="true"></i></a>System Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Information</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build Version Release</td>
+<td><code>adb shell getprop ro.build.version.release</code></td>
+</tr>
+<tr>
+<td>Build Version SDK</td>
+<td><code>adb shell getprop ro.build.version.sdk</code></td>
+</tr>
+<tr>
+<td>Product Model</td>
+<td><code>adb shell getprop ro.product.model</code></td>
+</tr>
+<tr>
+<td>Product Brand</td>
+<td><code>adb shell getprop ro.product.brand</code></td>
+</tr>
+<tr>
+<td>Serial Number</td>
+<td><code>adb shell getprop ro.serialno</code></td>
+</tr>
+<tr>
+<td>IMEI</td>
+<td><code>adb shell dumpsys iphonesubinfo</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cat-something"><a name="cat-something" class="anchor-navigation-ex-anchor" href="#cat-something"><i class="fa fa-link" aria-hidden="true"></i></a>Cat something</h2>
+<table>
+<thead>
+<tr>
+<th>Information</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAC Address</td>
+<td><code>adb shell cat /sys/class/net/wlan0/address</code></td>
+</tr>
+<tr>
+<td>Memory Information</td>
+<td><code>adb shell cat /proc/meminfo</code></td>
+</tr>
+<tr>
+<td>SD Card</td>
+<td><code>adb shell df /sdcard</code></td>
+</tr>
+<tr>
+<td>Internal Storage</td>
+<td><code>adb shell df /data</code></td>
+</tr>
+<tr>
+<td>Storage Information</td>
+<td><code>adb shell df</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="display"><a name="display" class="anchor-navigation-ex-anchor" href="#display"><i class="fa fa-link" aria-hidden="true"></i></a>Display</h2>
+<table>
+<thead>
+<tr>
+<th>Information</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Screen Size</td>
+<td><code>adb shell wm size</code></td>
+</tr>
+<tr>
+<td>Screen Density</td>
+<td><code>adb shell wm density</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="cpu"><a name="cpu" class="anchor-navigation-ex-anchor" href="#cpu"><i class="fa fa-link" aria-hidden="true"></i></a>CPU</h2>
+<ol>
+<li><p>the number of CPU cores</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/present
+</code></pre>
+</li>
+<li><p>the number of CPU online</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/online
+</code></pre>
+</li>
+<li><p>Setting CPUs online</p>
+<pre><code class="lang-shell">echo 1 &gt; /sys/devices/system/cpu/cpu1/online
+echo 1 &gt; /sys/devices/system/cpu/cpu2/online
+echo 1 &gt; /sys/devices/system/cpu/cpu3/online
+</code></pre>
+</li>
+<li><p>Setting CPUs offline</p>
+<pre><code class="lang-shell">echo 0 &gt; /sys/devices/system/cpu/cpu1/online
+echo 0 &gt; /sys/devices/system/cpu/cpu2/online
+echo 0 &gt; /sys/devices/system/cpu/cpu3/online
+</code></pre>
+</li>
+<li><p>Current Frequency</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq
+</code></pre>
+</li>
+<li><p>Maximum Frequency</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq
+</code></pre>
+</li>
+<li><p>Minimum Frequency</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_min_freq
+</code></pre>
+</li>
+<li><p>Available Frequency</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+</code></pre>
+</li>
+<li><p>Transition Latency</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_transition_latency
+</code></pre>
+</li>
+<li><p>Brand</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_driver
+</code></pre>
+</li>
+<li><p>An example to set CPU 0 max frequency</p>
+<pre><code class="lang-shell">//1. Available frequency.
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies
+768000 884000 1000000 1100000 1200000
+
+//2. Set max and min frequency.
+echo 416000  &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+echo 416000  &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+
+//3. Check the result.
+cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_cur_freq
+</code></pre>
+</li>
+<li><p>Available Governor</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_governors
+</code></pre>
+</li>
+<li><p>Supported Governor</p>
+<pre><code class="lang-shell">cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+</code></pre>
+</li>
+<li><p>Set a governor</p>
+<pre><code class="lang-shell">echo &quot;userspace&quot; &gt; /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+</code></pre>
+</li>
+</ol>
+<h2 id="ddr"><a name="ddr" class="anchor-navigation-ex-anchor" href="#ddr"><i class="fa fa-link" aria-hidden="true"></i></a>DDR</h2>
+<p>First you should enter the shell environment and then:</p>
+<ol>
+<li><p>Current Frequency </p>
+<pre><code class="lang-shell">cat sys/class/devfreq/scene-frequency/xxx-governor/ddrinfo_cur_freq
+</code></pre>
+</li>
+<li><p>Supported Frequency</p>
+<pre><code class="lang-shell">cat sys/class/devfreq/scene-frequency/xxx-governor/ddrinfo_freq_table
+</code></pre>
+</li>
+<li><p>Fixed DDR to a certain frequency</p>
+<pre><code class="lang-shell">echo 0 &gt; /sys/class/devfreq/scene-frequency/xxx_governor/auto_dfs_on_off
+echo xxx &gt; /sys/class/devfreq/scene-frequency/xxx_governor/scaling_force_ddr_freq
+</code></pre>
+</li>
+<li><p>Governor of DDR</p>
+<pre><code>cat /sys/class/devfreq/scene-frequency/xxx-governor
+</code></pre></li>
+</ol>
+<h2 id="gpu"><a name="gpu" class="anchor-navigation-ex-anchor" href="#gpu"><i class="fa fa-link" aria-hidden="true"></i></a>GPU</h2>
+<p>First you should enter the shell environment and then:</p>
+<ol>
+<li><p>GPU Frequency</p>
+<pre><code class="lang-shell">cat  sys/class/devfreq/60000000.gpu/available_frequencies
+</code></pre>
+</li>
+<li><p>Current Frequency</p>
+<pre><code class="lang-shell">cat /sys/class/devfreq/60000000.gpu/cur_fre
+</code></pre>
+</li>
+</ol>
+<h2 id="skip-wizard"><a name="skip-wizard" class="anchor-navigation-ex-anchor" href="#skip-wizard"><i class="fa fa-link" aria-hidden="true"></i></a>Skip wizard</h2>
+<p>If you want to skip the wizard when the device is active first time, you can:</p>
+<pre><code class="lang-shell">adb shell settings put secure user_setup_complete 1
+adb shell settings put global device_provisioned 1
+adb reboot
+</code></pre>
+<h2 id="find-a-apk-file"><a name="find-a-apk-file" class="anchor-navigation-ex-anchor" href="#find-a-apk-file"><i class="fa fa-link" aria-hidden="true"></i></a>Find a APK file</h2>
+<p>If you want to find a <code>.apk</code> file on a device, you can issue this command:</p>
+<pre><code class="lang-shell">adb shell pm path &lt;PACKAGE_NAME&gt;
+</code></pre>
+<h2 id="compile-way"><a name="compile-way" class="anchor-navigation-ex-anchor" href="#compile-way"><i class="fa fa-link" aria-hidden="true"></i></a>Compile Way</h2>
+<p>You can dump an app to find this app compile way.</p>
+<pre><code class="lang-shell">adb shell dumpsys package &lt;PACKAGE_NAME&gt;
+</code></pre>
+<p>Then, scroll to <code>Dexopt state</code>. </p>
+<pre><code class="lang-shell">Dexopt state:
+  [&lt;PACKAGE_NAME&gt;]
+    path: /product/app/&lt;NAME&gt;/&lt;NAME&gt;.apk
+      arm64: [status=verify] [reason=prebuilt]
+</code></pre>
+<p>If you want to modify compile way, you can issue this command:</p>
+<pre><code class="lang-shell">adb shell cmd package compile -m &lt;compile&gt; &lt;PACKAGE_NAME&gt;
+</code></pre>
+<p>For example:</p>
+<pre><code class="lang-shell">adb shell cmd package compile -m quicken com.google.android.calculator
+</code></pre>
+<p>Reference Docs:</p>
+<ol>
+<li><p><a href="https://zhuanlan.zhihu.com/p/418965915" target="_blank">https://zhuanlan.zhihu.com/p/418965915</a></p>
+</li>
+<li><p><a href="https://blog.csdn.net/wenwen091100304/article/details/49704139" target="_blank">https://blog.csdn.net/wenwen091100304/article/details/49704139</a></p>
+</li>
+<li><a href="https://blog.csdn.net/weixin_35203997/article/details/117764764" target="_blank">https://blog.csdn.net/weixin_35203997/article/details/117764764</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="command_line_tools.html" class="navigation navigation-prev " aria-label="Previous page: Command line tools">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="systrace.html" class="navigation navigation-next " aria-label="Next page: Systrace">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Android Debug Bridge (ADB)","level":"2.5","depth":1,"next":{"title":"Systrace","level":"2.6","depth":1,"path":"part2/systrace.md","ref":"part2/systrace.md","articles":[]},"previous":{"title":"Command line tools","level":"2.4","depth":1,"path":"part2/command_line_tools.md","ref":"part2/command_line_tools.md","articles":[]},"dir":"ltr"},"config":{"plugins":["insert-logo","-search","-lunr","-sharing","-livereload","github","graph","puml","katex","code","ace","mermaid-gb3","flexible-alerts","chapter-fold","anchor-navigation-ex","theme-comscore","custom-favicon","hide-element","livereload"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy Harvey.X 2022","modify_label":"Last modified：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"ace":{},"github":{"url":"https://harveymini.github.io"},"puml":{},"code":{"copyButtons":true},"graph":{},"hide-element":{"elements":[".gitbook-link","ul.summary > li.divider"]},"katex":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"mode":"float","pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"showLevel":false,"tocLevel1Icon":"fa fa-hand-o-right","tocLevel2Icon":"fa fa-hand-o-right","tocLevel3Icon":"fa fa-hand-o-right","showGoTop":true,"isShowTocTitleIcon":true,"printLog":false,"multipleH1":true,"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false}},"favicon":"icon/favicon.ico","theme-comscore":{},"custom-favicon":{},"flexible-alerts":{"danger":{"className":"danger","icon":"fa fa-ban","label":"Attention"},"note":{"className":"info","icon":"fa fa-info-circle","label":"Note"},"style":"callout","tip":{"className":"tip","icon":"fa fa-lightbulb-o","label":"Tip"},"warning":{"className":"warning","icon":"fa fa-exclamation-triangle","label":"Warning"}},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"insert-logo":{"style":"background: none; max-height: 30px; min-height: 30px","url":"/images/logo.png"}},"theme":"default","author":"Harvey.X","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Android","language":"en","gitbook":"*"},"file":{"path":"part2/adb.md","mtime":"2022-10-18T13:39:18.357Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-11-12T02:39:00.114Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-insert-logo/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ace/ace.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-flexible-alerts/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-hide-element/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
